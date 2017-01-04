@@ -35,3 +35,8 @@ boris-bikes is a program that will emulate all the docking stations, bikes, and 
 
 #step7:
   move between feature and unit tests
+
+#step8:
+  write a rspec test
+
+  test an object responds to a message 
