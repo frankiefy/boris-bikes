@@ -29,3 +29,6 @@ boris-bikes is a program that will emulate all the docking stations, bikes, and 
 
 #step5:
   to find out how to solve the error, a testing framework is needed (eg RSpec)
+
+#step6:
+  use 'require'
