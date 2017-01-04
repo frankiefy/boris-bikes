@@ -32,3 +32,6 @@ boris-bikes is a program that will emulate all the docking stations, bikes, and 
 
 #step6:
   use 'require'
+
+#step7:
+  move between feature and unit tests
