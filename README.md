@@ -3,40 +3,47 @@ boris-bikes is a program that will emulate all the docking stations, bikes, and 
 (start: 04/01/17)
 
 
-##Notes from each step
+#Notes from each step
 
-#step1:
+##step1:
   setting up the repo
 
-#step2:
+##step2:
   User stories: what a program is expected to do from clients perspective
 
   User stories -> functional system(objects & messages)(objects in system & how they interact) we call these systems Domain Models.
 
   Challenge: user story -> domain model
 
-#step3:
+##step3:
   Domain Model: abstract representation of objects within a system, and the messages to get use to communicate with each other.
 
   Feature test: how will objects and messages work together?
 
-#step4:
+##step4:
   Errors are gud
 
   show what the problem is and where to go to fix it
 
   Stack trace
 
-#step5:
+##step5:
   to find out how to solve the error, a testing framework is needed (eg RSpec)
 
-#step6:
+##step6:
   use 'require'
 
-#step7:
+##step7:
   move between feature and unit tests
 
-#step8:
+##step8:
   write a rspec test
 
-  test an object responds to a message 
+  test an object responds to a message
+
+##step9:
+  debug stack trace
+
+  describe object using a spec
+
+  
