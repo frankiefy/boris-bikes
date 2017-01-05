@@ -28,12 +28,10 @@ bike = Bike.new #we create an instance of Bike in order to use it in some tests
 
 #walkthrough
   it 'docks the bike' do
-    bike = Bike.new
     expect(subject.dock(bike)).to eq bike
   end
 
   it 'returns docked bike' do
-    bike = Bike.new
     subject.dock(bike)
     expect(subject.bike).to eq bike
   end
@@ -42,4 +40,8 @@ bike = Bike.new #we create an instance of Bike in order to use it in some tests
     expect {subject.release_bike}.to raise_error("No bikes in docking station.")
   end
 
+  it 'does not accpet a bike when full' do
+    subject.dock(bike)
+    expect {subject.dock(bike)}.to raise_error("Docking station is full")
+  end
 end
