@@ -9,9 +9,3 @@ describe DockingStation do
     expect(((DockingStation.new).release_bike).working?).to eq nil
   end
 end
-
-describe Bike do
-  it 'responds to working?' do
-    expect(subject).to respond_to :working?
-  end
-end
