@@ -1,16 +1,21 @@
 require 'docking_station'
 
 describe DockingStation do
+
+bike = Bike.new #we create an instance of Bike in order to use it in some tests
+
   it 'responds to release_bike' do
     expect(subject).to respond_to :release_bike
   end
 
-  it 'gives a bike' do
-    expect(subject.release_bike).to be_instance_of Bike
+  it 'gives the bike created' do
+    subject.dock(bike)  #we dock a previously created (line 5) bike
+    expect(subject.release_bike).to eq bike
   end
 
   it 'expects bike to be working' do
-    expect(((DockingStation.new).release_bike).working?).to eq true
+    subject.dock(bike)
+    expect((subject.release_bike).working?).to eq true
   end
 
   it 'subject responding with 1 argument' do
@@ -31,6 +36,10 @@ describe DockingStation do
     bike = Bike.new
     subject.dock(bike)
     expect(subject.bike).to eq bike
+  end
+
+  it 'does not release bike if dock is empty' do
+    expect {subject.release_bike}.to raise_error("No bikes in docking station.")
   end
 
 end
