@@ -1,4 +1,4 @@
-require 'docking_station_class.rb'
+require 'docking_station'
 
 describe DockingStation do
   it 'responds to release_bike' do
@@ -12,4 +12,10 @@ describe DockingStation do
   it 'expects bike to be working' do
     expect(((DockingStation.new).release_bike).working?).to eq true
   end
+
+  it 'docks a bike' do
+    expect(subject).to respond_to(:dock).with(1).argument
+  end
+
+
 end

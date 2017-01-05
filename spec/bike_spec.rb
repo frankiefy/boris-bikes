@@ -1,4 +1,4 @@
-require 'bike_class'
+require 'bike'
 
 describe Bike do
   it 'responds to working?' do
