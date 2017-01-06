@@ -6,17 +6,23 @@ class DockingStation
   end
 
   def release_bike
-    fail "No bikes in docking station." unless !bikes.empty?
+    fail "No bikes in docking station." if empty?
     bikes.pop
   end
 
-
   def dock(x)
-    fail "Docking station is full" unless bikes.length < 20
+    fail "Docking station is full" if full?
     bikes.push(x)
   end
 
+  private
+  def full?
+    bikes.length >= 20
+  end
 
+  def empty?
+    bikes.empty?
+  end
 end
 
 
