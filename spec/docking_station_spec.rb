@@ -41,7 +41,7 @@ bike = Bike.new #we create an instance of Bike in order to use it in some tests
   end
 
   it 'does not accept a bike when full' do
-    20.times { subject.dock(bike) }
+    DockingStation::DEFAULT_CAPACITY.times { subject.dock(bike) }
     expect {subject.dock(bike)}.to raise_error("Docking station is full")
   end
 
