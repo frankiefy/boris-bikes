@@ -22,10 +22,6 @@ bike = Bike.new #we create an instance of Bike in order to use it in some tests
     expect(subject).to respond_to(:dock).with(1).argument
   end
 
-  it 'subject responds to .bike' do
-    expect(subject).to respond_to :bikes
-  end
-
 #walkthrough
   it 'docks the bike' do
     expect(subject.dock(bike)).to include(bike)
@@ -41,8 +37,16 @@ bike = Bike.new #we create an instance of Bike in order to use it in some tests
   end
 
   it 'does not accept a bike when full' do
-    DockingStation::DEFAULT_CAPACITY.times { subject.dock(bike) }
+    subject.capacity.times { subject.dock(bike) }
     expect {subject.dock(bike)}.to raise_error("Docking station is full")
   end
 
+  it 'has a default capcity of 20' do
+    expect(subject.capacity).to eq 20
+  end
+
+  it 'when passed capacity of 10, the capacity is 10' do
+    docking_station = DockingStation.new(10)
+    expect(docking_station.capacity).to eq 10
+  end
 end
