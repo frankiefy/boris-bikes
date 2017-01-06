@@ -23,17 +23,17 @@ bike = Bike.new #we create an instance of Bike in order to use it in some tests
   end
 
   it 'subject responds to .bike' do
-    expect(subject).to respond_to :bike
+    expect(subject).to respond_to :bikes
   end
 
 #walkthrough
   it 'docks the bike' do
-    expect(subject.dock(bike)).to eq bike
+    expect(subject.dock(bike)).to include(bike)
   end
 
   it 'returns docked bike' do
     subject.dock(bike)
-    expect(subject.bike).to eq bike
+    expect(subject.release_bike).to eq bike
   end
 
   it 'does not release bike if dock is empty' do
@@ -41,7 +41,8 @@ bike = Bike.new #we create an instance of Bike in order to use it in some tests
   end
 
   it 'does not accept a bike when full' do
-    subject.dock(bike)
+    20.times { subject.dock(bike) }
     expect {subject.dock(bike)}.to raise_error("Docking station is full")
   end
+
 end
