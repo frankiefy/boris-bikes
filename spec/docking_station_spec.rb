@@ -13,9 +13,15 @@ bike = Bike.new #we create an instance of Bike in order to use it in some tests
     expect(subject.release_bike).to eq bike
   end
 
-  it 'expects bike to be working' do
+  it 'expects bike to be working by default' do
     subject.dock(bike)
     expect((subject.release_bike).working?).to eq true
+  end
+
+  it 'reports a broken bike as broken when docked' do
+    broken_bike = Bike.new
+    subject.dock(broken_bike(works=false))
+    expect(broken_bike.working?).to eq false
   end
 
   it 'subject responding with 1 argument' do
